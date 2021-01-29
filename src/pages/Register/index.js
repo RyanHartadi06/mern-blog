@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginBg, RegisterBg } from "../../assets";
-import { Input } from "../../components";
+import { Button, Gap, Input, Link } from "../../components";
 import "./register.scss";
 const Register = () => {
   return (
@@ -9,8 +9,16 @@ const Register = () => {
         <img src={LoginBg} className="bg-image" />
       </div>
       <div className="right">
-        <p>Register Page</p>
-        <Input />
+        <p className="title">Register Page</p>
+        <Input name="Full Name" placeholder="Full Name" />
+        <Gap height={16} />
+        <Input name="Email" placeholder="Email" />
+        <Gap height={16} />
+        <Input name="Password" placeholder="Password" />
+        <Gap height={30} />
+        <Button title="Register" />
+        <Gap height={100} />
+        <Link title="Kembali Ke Login" />
       </div>
     </div>
   );
