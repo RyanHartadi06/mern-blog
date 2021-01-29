@@ -3,25 +3,28 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Home";
 import CreateBlog from "../CreateBlog";
 import DetailBlog from "../DetailBlog";
-
+import { Footer, Header } from "../../components/molecules";
+import "./MainApp.scss";
 const MainApp = () => {
   return (
-    <div>
-      <p>Header</p>
-      <Router>
-        <Switch>
-          <Route path="/create-blog">
-            <CreateBlog />
-          </Route>
-          <Route path="/detail-blog">
-            <DetailBlog />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-      <p>Footer</p>
+    <div className="main-app-wrapper">
+      <Header />
+      <div className="content-wrapper">
+        <Router>
+          <Switch>
+            <Route path="/create-blog">
+              <CreateBlog />
+            </Route>
+            <Route path="/detail-blog">
+              <DetailBlog />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+      <Footer />
     </div>
   );
 };
